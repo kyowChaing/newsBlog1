@@ -24,12 +24,12 @@ const Home = () => {
 
       <Navbar></Navbar>
 
-      <section className='flex justify-between '>
+      <section className='flex '>
 
-        <aside className=' '>
+        <aside className=''>
           <LeftAside></LeftAside>
         </aside>
-        <article>
+        <article className='basis-4/5'>
           <ArticlePart></ArticlePart>
         </article>
         <aside className=' '>
