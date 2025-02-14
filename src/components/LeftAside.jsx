@@ -13,9 +13,17 @@ const LeftAside = () => {
 
   }, [])
 
+  useEffect(()=>{
+      fetch('news.json')
+      .then((res)=>res.json())
+      .then(data=>setNews(data))
+
+  },[])
+
   
 
 console.log(categories);
+console.log(news);
   return (
     <div>
       <h2 className=' font-bold'>All Catergory </h2> 
@@ -25,7 +33,12 @@ console.log(categories);
 
 
       <div>
+        {news.slice(3,6).map(n=>
+          <div key={n._id}>
+              <img src={n.image_url} alt="" />
+        </div>    
         
+        )}
       </div>
     </div>
   )
