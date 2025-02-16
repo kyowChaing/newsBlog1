@@ -1,6 +1,7 @@
-# React + Vite
+# NewsBlog  using  React + Vite + Tailwind CSS + Firebase
 
-<!-- Working Steps -->
+
+# Working Steps
 1. Create React project setup using vite and react router dom (version 6.29.0 )
 2. Add tailwind CSS (v3.4.17) and DaisyUI components library ( 3.9.4)
 

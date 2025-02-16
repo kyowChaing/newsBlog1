@@ -32,10 +32,11 @@ console.log(news);
         )}
 
 
-      <div>
+      <div className=' p-1'>
         {news.slice(3,6).map(n=>
-          <div key={n._id}>
+          <div key={n._id} className=' p-1'>
               <img src={n.image_url} alt="" />
+              <h2 className=' font-bold'> { n.title} </h2>
         </div>    
         
         )}

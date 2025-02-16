@@ -24,15 +24,15 @@ const Home = () => {
 
       <Navbar></Navbar>
 
-      <section className='flex '>
+      <section className='grid grid-cols-1 md:grid-cols-4 '>
 
-        <aside className=''>
+        <aside className='border'>
           <LeftAside></LeftAside>
         </aside>
-        <article className='basis-4/5'>
+        <article className=' border md:col-span-2'>
           <ArticlePart></ArticlePart>
         </article>
-        <aside className=' '>
+        <aside className='border '>
           <RightAside></RightAside>
           <div>
             <img src={bgImg} className='w-full' alt="" />
