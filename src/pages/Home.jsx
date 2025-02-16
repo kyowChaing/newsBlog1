@@ -26,13 +26,13 @@ const Home = () => {
 
       <section className='grid grid-cols-1 md:grid-cols-4 '>
 
-        <aside className='border'>
+        <aside className=' '>
           <LeftAside></LeftAside>
         </aside>
-        <article className=' border md:col-span-2'>
+        <article className=' md:col-span-2'>
           <ArticlePart></ArticlePart>
         </article>
-        <aside className='border '>
+        <aside className=' '>
           <RightAside></RightAside>
           <div>
             <img src={bgImg} className='w-full' alt="" />
