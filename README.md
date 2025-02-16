@@ -24,5 +24,8 @@
 10. Apply NavLink {isActive} attribute to render dynamic style according active NavLink
 
 11. Load news JSON data from 'public' derectory using fetch() and render max 3 data using Array.slice() and map()
+12. Load news JSON data and show  8 news items with author name, author image, publish date, news title, news image, news content with Read more button
+
+
 
 

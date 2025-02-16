@@ -23,7 +23,7 @@ const LeftAside = () => {
   
 
 console.log(categories);
-console.log(news);
+// console.log(news);
   return (
     <div>
       <h2 className=' font-bold'>All Catergory </h2> 
