@@ -7,7 +7,7 @@ import { FaRegEye } from "react-icons/fa";
 
 const News = ({news}) => {
 
-    const { rating, total_view, author, title,image_url } = news;
+    const { rating, total_view, author, title,image_url, details } = news;
   return (
     <div>
 
@@ -27,13 +27,13 @@ const News = ({news}) => {
             </div>
           </div>
           <div className=' m-4'>
-          <h2 className=' font-bold'>{title}</h2>
+          <h2 className=' font-bold p-3'>{title}</h2>
           <img src={image_url} alt="" />
-          <p className='p-1 mt-3'>
-          Wednesday, August 24, 2022 | Tag Cloud Tags: Biden, EU, Euro, Europe, Joe Biden, Military, News, 
-          Russia, Security, UK, Ukraine, 
-          United States, Worthy News (Worthy News) – U.S. President Joe Biden has announced nearly $3 billion 
-          in new U.S. military a... <button className='text-[#FF8F4C]'> Read More </button> 
+          <p className='p-1 mt-3'>{details.slice(0,150)}
+
+            <Link to={'/'}> <button className='text-[#FF8F4C] ml-6'> Read More </button></Link>
+            
+             
           </p>
           </div>
           <div className='flex justify-between p-4 border'>

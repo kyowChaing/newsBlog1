@@ -9,12 +9,11 @@ import ArticlePart from '../components/ArticlePart';
 import RightAside from '../components/RightAside';
 import bgImg from '../assets/bg.png'
 
+
 const Home = () => {
   return (
     <div>
-
       <Header></Header>
-
       <div className=' flex bg-slate-300 h-20  mt-11 items-center'>
         <button className="btn btn-active btn-secondary  ml-6 text-center mt-0"> Latest </button>
         <Marquee>
