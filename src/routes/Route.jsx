@@ -7,6 +7,7 @@ import LogIn from '../pages/LogIn';
 import About from '../pages/About';
 import Career from '../pages/Career';
 import Add from '../pages/Add';
+import Register from '../pages/Register';
 
 
 const routers = createBrowserRouter([
@@ -29,6 +30,10 @@ const routers = createBrowserRouter([
                     {
                         path: '/career',
                         element: <Career></Career>
+                    },
+                    {
+                        path:'/register',
+                        element:<Register></Register>
                     }
 
                 ]

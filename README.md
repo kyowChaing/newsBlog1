@@ -23,8 +23,11 @@
 9. Create LeftAside section- load build in json data form public folder using fetch() under useEffect() and store that data into state, show into front page
 10. Apply NavLink {isActive} attribute to render dynamic style according active NavLink
 
-11. Load news JSON data from 'public' derectory using fetch() and render max 3 data using Array.slice() and map()
-12. Load news JSON data and show  8 news items with author name, author image, publish date, news title, news image, news content with Read more button
+11. Load news JSON data from 'public' derectory using fetch() and render max 3 data using Array.slice() and map() into left side content section
+12. Load news JSON data and show  8 news items with author name, author image, publish date, news title, news image, news content with Read more button into middle side news content section
+
+13. create login and register page with route 
+14. use FormData() and FormData(e.currentTarget).get('field name') for access input field data
 
 
 
