@@ -7,16 +7,23 @@ const Register = () => {
     const handleRegister = (e) => {
 
         e.preventDefault();
-        console.log(e.currentTarget)
-        console.log(e.target)
+        // console.log(e.currentTarget)
+        // console.log(e.target)
+
+        // const form = new FormData(e.currentTarget)
+
+        // console.log(form)
+        // console.log(form.get('name'))
+        // console.log(form.get('imgurl'))
+        // console.log(form.get('email'))
+        // console.log(form.get('password'))
 
         const form = new FormData(e.currentTarget)
-
-        console.log(form)
-        console.log(form.get('name'))
-        console.log(form.get('imgurl'))
-        console.log(form.get('email'))
-        console.log(form.get('password'))
+        const name = form.get('name');
+        const imgurl = form.get('imgurl');
+        const email = form.get('email')
+        const password = form.get('password');
+        
     }
 
 
@@ -25,7 +32,7 @@ const Register = () => {
             <Navbar></Navbar>
             <div className=' bg-[#F3F3F3] h-screen'>
 
-                <form onSubmit={handleRegister} className=" md:w-3/4 lg:w-1/2 mx-auto pt-28">
+                <form onSubmit={handleRegister} className=" md:w-3/4 lg:w-1/2 mx-auto pt-28 px-2">
                     <h1 className='text-[#403F3F] font-bold text-center text-2xl pb-7'>Register Your Account</h1>
                     <hr className='h-1 bg-white ' />
                     <div className="form-control pt-5">
