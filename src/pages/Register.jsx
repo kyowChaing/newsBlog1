@@ -1,12 +1,25 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Navbar from '../components/Navbar'
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Authentication/AuthProvider';
 
 const Register = () => {
+
+    const {createUser}=useContext(AuthContext)
 
     const handleRegister = (e) => {
 
         e.preventDefault();
+        const form = new FormData(e.currentTarget);
+        const name = form.get('name');
+        const imgurl = form.get('imgurl');
+        const email = form.get('email')
+        const password = form.get('password');
+
+        createUser(email,password, name, imgurl)
+        .then(res=>console.log("user log in"))
+        .catch(error=>console.log("error", error));
+
         // console.log(e.currentTarget)
         // console.log(e.target)
 
@@ -17,20 +30,13 @@ const Register = () => {
         // console.log(form.get('imgurl'))
         // console.log(form.get('email'))
         // console.log(form.get('password'))
-
-        const form = new FormData(e.currentTarget)
-        const name = form.get('name');
-        const imgurl = form.get('imgurl');
-        const email = form.get('email')
-        const password = form.get('password');
-        
     }
 
 
     return (
         <div>
             <Navbar></Navbar>
-            <div className=' bg-[#F3F3F3] h-screen'>
+            <div className=' bg-[#F3F3F3] '>
 
                 <form onSubmit={handleRegister} className=" md:w-3/4 lg:w-1/2 mx-auto pt-28 px-2">
                     <h1 className='text-[#403F3F] font-bold text-center text-2xl pb-7'>Register Your Account</h1>

@@ -30,8 +30,9 @@
 13. use FormData() and FormData(e.currentTarget).get('field name') for access input field data
 
 14. firebase SDK integration 
-15. use .env to hide firebase condiguration [ API key, API id ...]
+15. use .env to hide firebase configuration [ API key, API id ...]
 
 16. create AuthContext using createContext() to handle props drilling and create AuthProvider.jsx 
+17. create user using firebase createUserWithEmailAndPassword() method
 
 
