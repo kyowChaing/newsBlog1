@@ -35,4 +35,6 @@
 16. create AuthContext using createContext() to handle props drilling and create AuthProvider.jsx 
 17. create user using firebase createUserWithEmailAndPassword() method
 
+18. create Login/Signin existing users process using signInWithEmailAnd1Password() 
+
 

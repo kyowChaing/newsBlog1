@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
-import Header from '../components/Header'
 import { Form, Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
+import { AuthContext } from '../Authentication/AuthProvider'
 
 
 
@@ -21,6 +21,7 @@ const LogIn = () => {
 
     userLogin(email,password)
     .then(result=>console.log("log in success"))
+    .catch(error=>console.log(error))
 
     // console.log(e.currentTarget)
     // console.log(e.target)
