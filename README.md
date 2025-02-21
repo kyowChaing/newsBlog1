@@ -32,9 +32,10 @@
 14. firebase SDK integration 
 15. use .env to hide firebase configuration [ API key, API id ...]
 
-16. create AuthContext using createContext() to handle props drilling and create AuthProvider.jsx 
+16. create AuthContext using createContext() to handle props drilling and create AuthProvider.jsx to handle Authentication
 17. create user using firebase createUserWithEmailAndPassword() method
 
 18. create Login/Signin existing users process using signInWithEmailAnd1Password() 
 
+19. Set an authentication state observer/tracker by onAuthStateChanged() and get user data
 

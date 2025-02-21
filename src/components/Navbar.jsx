@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import image from '../assets/user.png'
+import { AuthContext } from '../Authentication/AuthProvider'
 
 const Navbar = () => {
+  const {user}=useContext(AuthContext);
+
+  console.log(
+    'user from nav is :',user
+  )
+
+  console.log('user email', user?.email)
+
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -15,6 +24,7 @@ const Navbar = () => {
             <li><Link > About</Link></li>
 
             <li> <Link to=""> Career </Link></li>
+            <li> <Link to=""> {user?.email} </Link></li>
           </ul>
         </div>
       </div>
@@ -24,6 +34,8 @@ const Navbar = () => {
           <li><Link to={'/about'}> About</Link></li>
 
           <li> <Link to={'/career'}> Career </Link></li>
+          <li> <Link to=""> {user?.email} </Link></li>
+
         </ul>
       </div>
       <div className="navbar-end">
