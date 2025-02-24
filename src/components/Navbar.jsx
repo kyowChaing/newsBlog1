@@ -24,7 +24,7 @@ const Navbar = () => {
             <li><Link > About</Link></li>
 
             <li> <Link to=""> Career </Link></li>
-            <li> <Link to=""> {user?.email} </Link></li>
+            <li> <Link to=""> {user?.displayName} </Link></li>
           </ul>
         </div>
       </div>
@@ -34,7 +34,7 @@ const Navbar = () => {
           <li><Link to={'/about'}> About</Link></li>
 
           <li> <Link to={'/career'}> Career </Link></li>
-          <li> <Link to=""> {user?.email} </Link></li>
+          <li> <Link to=""> {user?.displayName} </Link></li>
 
         </ul>
       </div>

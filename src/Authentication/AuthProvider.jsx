@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react'
 import auth from './firebase.config'
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
 
 export const AuthContext = createContext(null);
 
@@ -24,6 +24,14 @@ const AuthProvider = ({children}) => {
 
         return signInWithEmailAndPassword(auth,email,password)
     }
+    
+
+    // Add user name during user registration
+    const addDisplayName = (user, name)=>{
+        return updateProfile(user, { displayName: name, });
+    
+    }
+     
 
 // Set an authentication state observer and get user data
 
@@ -36,7 +44,7 @@ const AuthProvider = ({children}) => {
         return ()=>unSubscribe();
     }, [])
 
-    const authInfo = { user, createUser, userLogin }
+    const authInfo = { user, createUser, userLogin, addDisplayName}
 
     console.log( "user is", user);
 

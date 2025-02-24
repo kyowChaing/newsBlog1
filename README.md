@@ -39,3 +39,5 @@
 
 19. Set an authentication state observer/tracker by onAuthStateChanged() and get user data
 
+20. Set user Name during createing user acount using updateProfile()
+

@@ -3,9 +3,10 @@ import Navbar from '../components/Navbar'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Authentication/AuthProvider';
 
+
 const Register = () => {
 
-    const {createUser}=useContext(AuthContext)
+    const { user, createUser, addDisplayName } = useContext(AuthContext)
 
     const handleRegister = (e) => {
 
@@ -16,9 +17,13 @@ const Register = () => {
         const email = form.get('email')
         const password = form.get('password');
 
-        createUser(email,password, name, imgurl)
-        .then(res=>console.log("user log in"))
-        .catch(error=>console.log("error", error));
+        createUser(email, password, name, imgurl)
+            .then(res => {
+               addDisplayName(res.user,name)
+            })
+            .catch(error => console.log("error", error));
+
+        console.log("log in user is", user)
 
         // console.log(e.currentTarget)
         // console.log(e.target)
