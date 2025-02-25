@@ -35,9 +35,13 @@
 16. create AuthContext using createContext() to handle props drilling and create AuthProvider.jsx to handle Authentication
 17. create user using firebase createUserWithEmailAndPassword() method
 
-18. create Login/Signin existing users process using signInWithEmailAnd1Password() 
+18. create Login/Signin existing users process using signInWithEmailAndPassword() 
 
 19. Set an authentication state observer/tracker by onAuthStateChanged() and get user data
 
-20. Set user Name during createing user acount using updateProfile()
+20. Set user Name during createing user acount using updateProfile() and display login user name in Navbar
+
+21. Show 'Logout' button if user is login and make Logout functionality using ' signOut() '
+
+
 

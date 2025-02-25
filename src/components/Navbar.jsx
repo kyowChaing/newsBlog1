@@ -4,7 +4,9 @@ import image from '../assets/user.png'
 import { AuthContext } from '../Authentication/AuthProvider'
 
 const Navbar = () => {
-  const {user}=useContext(AuthContext);
+  const {user, userLogout}=useContext(AuthContext);
+
+  const handleLogout =()=>{userLogout()}
 
   console.log(
     'user from nav is :',user
@@ -34,13 +36,13 @@ const Navbar = () => {
           <li><Link to={'/about'}> About</Link></li>
 
           <li> <Link to={'/career'}> Career </Link></li>
-          <li> <Link to=""> {user?.displayName} </Link></li>
 
         </ul>
       </div>
       <div className="navbar-end">
-
+      <Link className='px-2' to=""> {user?.displayName} </Link>
         <div className="dropdown dropdown-end">
+        
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
               <img src={image} />
@@ -58,7 +60,13 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <Link to={'/login'} className=' w-24 text-gray-50 p-1 text-center  bg-[#403f3f]'> Login</Link>
+        { user?
+          <button className=' w-24 text-gray-50 p-1 text-center  bg-[#403f3f]' onClick={handleLogout}> Logout </button>
+          :
+          <Link to={'/login'} className=' w-24 text-gray-50 p-1 text-center  bg-[#403f3f]'> Login </Link>
+
+        }
+
       </div>
     </div>
   )
