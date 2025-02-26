@@ -1,12 +1,13 @@
 import React, { useContext } from 'react'
 import Navbar from '../components/Navbar'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Authentication/AuthProvider';
 
 
 const Register = () => {
 
-    const { user, createUser, addDisplayName } = useContext(AuthContext)
+    const { user, createUser, addDisplayName } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleRegister = (e) => {
 
@@ -19,7 +20,8 @@ const Register = () => {
 
         createUser(email, password, name, imgurl)
             .then(res => {
-               addDisplayName(res.user,name)
+               addDisplayName(res.user,name);
+               navigate('/');
             })
             .catch(error => console.log("error", error));
 

@@ -43,5 +43,7 @@
 
 21. Show 'Logout' button if user is login and make Logout functionality using ' signOut() '
 
+22. Redirect user into homepage after Log in and Register using useNavigate()
+
 
 

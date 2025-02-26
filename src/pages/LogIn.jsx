@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Form, Link } from 'react-router-dom'
+import { Form, Link, useNavigate } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import { AuthContext } from '../Authentication/AuthProvider'
 
@@ -10,6 +10,7 @@ const LogIn = () => {
 
 
   const { userLogin } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleForm = (e) => {
 
@@ -20,7 +21,7 @@ const LogIn = () => {
     const password = form.get('password');
 
     userLogin(email,password)
-    .then(result=>console.log("log in success"))
+    .then(result=>{console.log("log in success"); navigate('/');})
     .catch(error=>console.log(error))
 
     // console.log(e.currentTarget)
