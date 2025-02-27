@@ -42,7 +42,10 @@ const routers = createBrowserRouter([
 
                     },
 
-                   
+                    {
+                        path:'/category/:name',
+                        element: <Home></Home>,
+                    },
 
                 ]
     },
@@ -53,13 +56,7 @@ const routers = createBrowserRouter([
 
     },
 
-    {
-        path:'/category/:name',
-        element: <Home></Home>,
-    },
-
-           
-
+   
 ]);
 
 export default routers;
