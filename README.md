@@ -45,5 +45,7 @@
 
 22. Redirect user into homepage after Log in and Register using useNavigate()
 
+23. create NewsDetails page to view news after click " Read More " button in home page
+
 
 

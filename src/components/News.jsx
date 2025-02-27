@@ -7,7 +7,7 @@ import { FaRegEye } from "react-icons/fa";
 
 const News = ({news}) => {
 
-    const { rating, total_view, author, title,image_url, details } = news;
+    const { _id, rating, total_view, author, title,image_url, details } = news;
   return (
     <div>
 
@@ -31,7 +31,7 @@ const News = ({news}) => {
           <img src={image_url} alt="" />
           <p className='p-1 mt-3'>{details.slice(0,150)}
 
-            <Link to={'/'}> <button className='text-[#FF8F4C] ml-6'> Read More </button></Link>
+            <Link to={`/news/${_id}`}> <button className='text-[#FF8F4C] ml-6'> Read More </button></Link>
             
              
           </p>

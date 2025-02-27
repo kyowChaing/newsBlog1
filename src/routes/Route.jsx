@@ -8,6 +8,7 @@ import About from '../pages/About';
 import Career from '../pages/Career';
 import Add from '../pages/Add';
 import Register from '../pages/Register';
+import NewsDetails from '../pages/NewsDetails';
 
 
 const routers = createBrowserRouter([
@@ -34,7 +35,14 @@ const routers = createBrowserRouter([
                     {
                         path:'/register',
                         element:<Register></Register>
-                    }
+                    },
+                    {
+                        path:'/news/:id',
+                        element:<NewsDetails></NewsDetails>,
+
+                    },
+
+                   
 
                 ]
     },
@@ -43,6 +51,11 @@ const routers = createBrowserRouter([
         path:'/add',
         element:<Add></Add>
 
+    },
+
+    {
+        path:'/category/:name',
+        element: <Home></Home>,
     },
 
            
