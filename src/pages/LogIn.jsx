@@ -1,16 +1,17 @@
 import React, { useContext } from 'react'
-import { Form, Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import { AuthContext } from '../Authentication/AuthProvider'
 
 
 
 const LogIn = () => {
-
-
-
+  
   const { userLogin } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  console.log("loaction from login page", location)
 
   const handleForm = (e) => {
 
@@ -21,7 +22,10 @@ const LogIn = () => {
     const password = form.get('password');
 
     userLogin(email,password)
-    .then(result=>{console.log("log in success"); navigate('/');})
+    .then(result=>{
+      console.log("log in success"); 
+      navigate(location?.state ? location.state : '/');
+    })
     .catch(error=>console.log(error))
 
     // console.log(e.currentTarget)
