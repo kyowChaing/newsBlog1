@@ -9,6 +9,7 @@ import Career from '../pages/Career';
 import Add from '../pages/Add';
 import Register from '../pages/Register';
 import NewsDetails from '../pages/NewsDetails';
+import PrivateRoute from '../Authentication/PrivateRoute';
 
 
 const routers = createBrowserRouter([
@@ -38,7 +39,7 @@ const routers = createBrowserRouter([
                     },
                     {
                         path:'/news/:id',
-                        element:<NewsDetails></NewsDetails>,
+                        element:<PrivateRoute> <NewsDetails></NewsDetails> </PrivateRoute> ,
 
                     },
 

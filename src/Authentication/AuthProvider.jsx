@@ -7,6 +7,7 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({children}) => {
 
     const [user, setUser]=useState(null);
+    const [ loading, setLoading] = useState(true);
 
 
 // create user using createUserWithEmailAndPassword() firebase authentication method
@@ -41,12 +42,13 @@ const AuthProvider = ({children}) => {
 
       const unSubscribe =  onAuthStateChanged(auth, (currentUser)=>{
             setUser(currentUser);
+            setLoading(false);
         })
 
         return ()=>unSubscribe();
     }, [])
 
-    const authInfo = { user, createUser, userLogin, userLogout, addDisplayName}
+    const authInfo = { user,loading, createUser, userLogin, userLogout, addDisplayName}
 
     console.log( "user is", user);
 

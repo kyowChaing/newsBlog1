@@ -49,5 +49,7 @@ Live Site Link : https://newsblog1-7fe3c.web.app/
 
 23. create NewsDetails page to view news after click " Read More " button in home page
 
+24. create loading state and private route for news details
+
 
 
