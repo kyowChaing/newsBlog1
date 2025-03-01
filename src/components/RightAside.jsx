@@ -2,8 +2,8 @@ import React from 'react'
 import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
 import { CiLink } from "react-icons/ci";
+
 
 import qzoneImg1 from '../assets/swimming.png';
 import qzoneImg2 from '../assets/class.png';
@@ -32,15 +32,15 @@ const RightAside = () => {
         <div className=' p-2'>
             <h2 className=' font-bold mb-2'> Find Us On</h2>
             <div className=' border-2 rounded-t rounded-b'>
-                <a href='' className=' flex justify-start  items-center p-4'>
+                <a target=' ' href='https://www.facebook.com/kyow.chak.k/' className=' flex justify-start  items-center p-4'>
                     <FaFacebook className=' mr-3' />
                     <span className=' text-[#706f6f]'>Facebook </span>
                 </a>
-                <a href='' className=' flex justify-start border-t-2  border-b-2 items-center p-4'>
-                    <FaTwitter className=' mr-3' />
-                    <span className=' text-[#706f6f]'> Twitter </span>
+                <a target=' ' href='https://github.com/kyowChaing' className=' flex justify-start border-t-2  border-b-2 items-center p-4'>
+                <FaGithub  className=' mr-3'/>
+                <span className=' text-[#706f6f]'> GitHub </span>
                 </a>
-                <a href=" " className=' flex justify-start  items-center p-4'>
+                <a target=' ' href="https://www.linkedin.com/in/kyow/" className=' flex justify-start  items-center p-4'>
                     <CiLink className='mr-3' />
                     <span className=' text-[#706f6f]'>LinkInd </span>
                 </a>
