@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
@@ -8,6 +8,7 @@ import { CiLink } from "react-icons/ci";
 import qzoneImg1 from '../assets/swimming.png';
 import qzoneImg2 from '../assets/class.png';
 import qzoneImg3 from '../assets/playground.png'
+import { AuthContext } from '../Authentication/AuthProvider';
 
 
 
@@ -15,20 +16,25 @@ import qzoneImg3 from '../assets/playground.png'
 
 
 const RightAside = () => {
+
+    const {user,handleGoogleSignIn}=useContext(AuthContext)
+
     return (<>
-        <div className=' p-2'>
+    {user ? <h2 className='font-bold ml-2'>{ user.displayName }</h2>:<div className=' p-2'>
             <h2 className=' font-bold'>Login With</h2>
             <div className=' mt-2'>
-                <button className='btn btn-outline w-full'>
+                <button onClick={handleGoogleSignIn} className='btn btn-outline w-full'>
                     <FaGoogle />
                     Login with Google
                 </button>
                 <button className='btn btn-outline w-full mt-1'>
                     <FaGithub />
-                    Login with Google
+                    Login with Github
                 </button>
             </div>
         </div>
+    }
+       
         <div className=' p-2'>
             <h2 className=' font-bold mb-2'> Find Us On</h2>
             <div className=' border-2 rounded-t rounded-b'>
