@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react'
 import auth from './firebase.config'
-import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 
 export const AuthContext = createContext(null);
 
@@ -10,6 +10,7 @@ const AuthProvider = ({children}) => {
     const [ loading, setLoading] = useState(true);
 
     const provider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
 
 // create user using createUserWithEmailAndPassword() firebase authentication method
 
@@ -31,8 +32,14 @@ const AuthProvider = ({children}) => {
 
 const handleGoogleSignIn = ()=>{
     signInWithPopup(auth, provider)
+
 }
 
+// user login with github popup
+
+const handleGithubSignIn = () =>{
+    signInWithPopup(auth, githubProvider)
+}
     // Add user name during user registration
     const addDisplayName = (user, name)=>{
         return updateProfile(user, { displayName: name, });
@@ -54,7 +61,7 @@ const handleGoogleSignIn = ()=>{
         return ()=>unSubscribe();
     }, [])
 
-    const authInfo = { user,loading, createUser, userLogin, userLogout, addDisplayName,handleGoogleSignIn}
+    const authInfo = { user,loading, createUser, userLogin, userLogout, addDisplayName,handleGoogleSignIn,handleGithubSignIn}
 
     console.log( "user is", user);
 

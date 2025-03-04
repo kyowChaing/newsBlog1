@@ -17,7 +17,7 @@ import { AuthContext } from '../Authentication/AuthProvider';
 
 const RightAside = () => {
 
-    const {user,handleGoogleSignIn}=useContext(AuthContext)
+    const {user,handleGoogleSignIn, handleGithubSignIn }=useContext(AuthContext)
 
     return (<>
     {user ? <h2 className='font-bold ml-2'>{ user.displayName }</h2>:<div className=' p-2'>
@@ -27,7 +27,7 @@ const RightAside = () => {
                     <FaGoogle />
                     Login with Google
                 </button>
-                <button className='btn btn-outline w-full mt-1'>
+                <button onClick={handleGithubSignIn} className='btn btn-outline w-full mt-1'>
                     <FaGithub />
                     Login with Github
                 </button>
